@@ -1,0 +1,102 @@
+/*
+ * Catppuccin Mocha theme matching ~/.config/alacritty/alacritty.toml
+ */
+
+* {
+    bg0             : #1e1e2eee; /* base, with alacritty's 0.94 opacity */
+    bg1             : #313244;
+    bg2             : #45475a;
+    fg0             : #cdd6f4;
+    fg1             : #bac2de;
+    dim-fg          : #7f849c;
+    selection-bg    : #f5e0dc;
+    selection-fg    : #1e1e2e;
+    match-bg        : #a6e3a1;
+    red             : #f38ba8;
+    green           : #a6e3a1;
+    yellow          : #f9e2af;
+    blue            : #89b4fa;
+    mauve           : #f5c2e7;
+    teal            : #94e2d5;
+
+    background-color: transparent;
+    text-color:       @fg0;
+
+    font: "Cascadia Mono NF 12";
+}
+
+window {
+    background-color: @bg0;
+    border:           2px;
+    border-color:     @mauve;
+    border-radius:    10px;
+    padding:          16px;
+    width:            600px;
+    location:         center;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing:  12px;
+}
+
+inputbar {
+    background-color: @bg1;
+    text-color:       @fg0;
+    border-radius:    6px;
+    padding:          10px 12px;
+    children:         [ prompt, entry ];
+    spacing:          8px;
+}
+
+prompt {
+    text-color: @mauve;
+    font:       "Cascadia Mono NF Bold 12";
+}
+
+entry {
+    placeholder:       "Search…";
+    placeholder-color: @dim-fg;
+    text-color:        @fg0;
+}
+
+listview {
+    lines:      8;
+    columns:    1;
+    spacing:    4px;
+    fixed-height: false;
+    border:     0px;
+    scrollbar:  false;
+}
+
+element {
+    padding:       8px 12px;
+    border-radius: 6px;
+    text-color:    @fg1;
+}
+
+element normal.normal {
+    text-color: @fg1;
+}
+
+element selected.normal {
+    background-color: @bg2;
+    text-color:       @teal;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element-icon {
+    size:    1.1em;
+    padding: 0 8px 0 0;
+}
+
+message {
+    background-color: @bg1;
+    border-radius:    6px;
+    padding:          8px;
+}
