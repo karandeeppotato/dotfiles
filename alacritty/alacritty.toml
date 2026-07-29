@@ -1,0 +1,142 @@
+[env]
+TERM = "xterm-256color"
+
+[terminal]
+shell = { program = "/usr/bin/zsh", args = ["-l"] }
+
+[window]
+dimensions = { columns = 140, lines = 40 }
+padding = { x = 12, y = 10 }
+dynamic_padding = true
+decorations = "full"
+opacity = 0.94
+blur = true
+title = "Alacritty"
+dynamic_title = true
+option_as_alt = "Both"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "Cascadia Mono NF"
+style = "Regular"
+
+[font.bold]
+family = "Cascadia Mono NF"
+style = "Bold"
+
+[font.italic]
+family = "Cascadia Mono NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "Cascadia Mono NF"
+style = "Bold Italic"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 500
+unfocused_hollow = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[mouse]
+hide_when_typing = true
+
+[general]
+live_config_reload = true
+
+# Catppuccin Mocha
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+dim_foreground = "#7f849c"
+bright_foreground = "#cdd6f4"
+
+[colors.cursor]
+text = "#1e1e2e"
+cursor = "#f5e0dc"
+
+[colors.vi_mode_cursor]
+text = "#1e1e2e"
+cursor = "#b4befe"
+
+[colors.search.matches]
+foreground = "#1e1e2e"
+background = "#a6adc8"
+
+[colors.search.focused_match]
+foreground = "#1e1e2e"
+background = "#a6e3a1"
+
+[colors.footer_bar]
+background = "#a6adc8"
+foreground = "#1e1e2e"
+
+[colors.hints.start]
+foreground = "#1e1e2e"
+background = "#f9e2af"
+
+[colors.hints.end]
+foreground = "#1e1e2e"
+background = "#a6adc8"
+
+[colors.selection]
+text = "#1e1e2e"
+background = "#f5e0dc"
+
+[colors.normal]
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#bac2de"
+
+[colors.bright]
+black = "#585b70"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#a6adc8"
+
+[colors.dim]
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#bac2de"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
+
+# F12: pop open a live system monitor (btop) in a new window
+[[keyboard.bindings]]
+key = "F12"
+command = { program = "alacritty", args = ["--title", "System Monitor", "-o", "window.opacity=1.0", "-e", "btop"] }
+
+# Alacritty has no native split panes, so these spawn a new window sized
+# for a horizontal/vertical layout instead. Snap it into place with KDE's
+# Meta+Arrow tiling (kwin doesn't auto-tile new windows on Wayland).
+[[keyboard.bindings]]
+key = "O"
+mods = "Control|Shift"
+command = { program = "alacritty", args = ["-o", "window.dimensions.columns=140", "-o", "window.dimensions.lines=20"] }
+
+[[keyboard.bindings]]
+key = "E"
+mods = "Control|Shift"
+command = { program = "alacritty", args = ["-o", "window.dimensions.columns=70", "-o", "window.dimensions.lines=40"] }
